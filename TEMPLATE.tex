@@ -1,0 +1,289 @@
+%
+% Created by Austin Henley, Scott Fleming, Danielle Jones
+% 3/13/18
+% Based on http://www.memphis.edu/gradschool/current_students/tdguide.php
+%
+
+\documentclass[letterpaper,12pt]{report}
+
+\usepackage{graphicx}
+\usepackage{latexsym}
+%\usepackage{macros}
+\usepackage{rotating}
+\usepackage{mathptmx}
+\usepackage{amsmath}
+
+%
+% Indent the first paragraph of chapters/sections/etc.
+%
+\usepackage{indentfirst}
+
+\raggedright
+\floatsep = .29in
+\textfloatsep = \floatsep
+\intextsep = \floatsep
+
+%
+% Page Margin Styles
+%
+\usepackage[left=1.5in,top=1in,right=1in,bottom=1in,nohead,nofoot,footskip=0.5in]{geometry}
+
+
+\usepackage{pdfpages}
+\usepackage[hidelinks]{hyperref}
+
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+
+%
+% Line-Space Styles
+%
+\usepackage{setspace}
+% \singlespacing
+% \doublespacing
+
+
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+
+%
+% Section Heading Styles
+%
+% \usepackage{sectsty}
+% \allsectionsfont{\mdseries\normalsize}
+% \chapterfont{\mdseries\normalsize}
+% \chapternumberfont{\mdseries\normalsize\MakeUppercase}
+% \chaptertitlefont{\mdseries\normalsize\MakeUppercase}
+
+%
+% Chapter/Section Heading Styles
+%
+\usepackage[compact]{titlesec}
+% \titleformat{\chapter}[display]{\normalfont\normalsize\mdseries\filcenter}{\MakeUppercase{\chaptertitlename\ \thechapter}}{0pt}{\normalsize\MakeUppercase}
+% \titlespacing*{\chapter}{0pt}{-24pt}{0pt}
+% \titleformat*{\section}{\mdseries\normalsize}
+% \titlespacing*{\section}{0pt}{0pt}{0pt}
+% \titleformat*{\subsection}{\mdseries\normalsize}
+% \titlespacing*{\subsection}{0pt}{0pt}{0pt}
+% \titleformat*{\subsubsection}{\mdseries\normalsize}
+% \titlespacing*{\subsubsection}{0pt}{0pt}{0pt}
+
+% \titleformat{\chapter}%
+% [display]% shape
+% {}% format
+% {\vspace{-6in}}% label
+% {0pt}% sep
+% {}% before-code
+% []% after-code
+
+%\titlespacing*{\chapter}{0pt}{-60pt}{0pt}[0pt]
+%    \titleformat{\chapter}[display]
+%      {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}
+%    \titlespacing*{\chapter}{0pt}{0pt}{0pt}
+
+%
+% ToC Styles
+%
+\usepackage{tocloft}
+
+
+%
+% Widow/orphan control
+% Note: these settings may be a bit heavy handed.
+%
+\widowpenalty=10000
+\clubpenalty=10000
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+
+\vspace*{1in}
+
+\MakeUppercase{Title}
+
+\vspace{12pt}
+
+by
+
+\vspace{12pt}
+
+Your Name
+
+\vspace{\fill}
+
+A Dissertation
+
+\vspace{12pt} 
+
+Submitted in Partial Fulfillment of the
+
+\vspace{12pt} 
+
+Requirements for the Degree of
+
+\vspace{12pt} 
+
+Doctor of Philosophy
+
+\vspace{48pt}
+
+Major: Computer Science
+
+\vspace{\fill}
+
+The University of Memphis
+
+\vspace{12pt}
+
+August 2018
+
+\vspace{24pt}
+
+\end{center}
+
+
+\setcounter{page}{1}
+\pagenumbering{roman}
+
+\setlength{\parindent}{15pt}
+
+\clearpage
+
+% The following copyright page is optional.
+
+\vspace*{\fill}
+\begin{center}
+
+Copyright\copyright Your Name
+
+\vspace{3pt}
+All rights reserved
+
+\end{center}
+\vspace*{\fill}
+
+\doublespacing
+
+\clearpage
+
+% Acknowledgements goes here.
+
+\clearpage
+
+\begin{center}
+\MakeUppercase{\textbf{Abstract}}
+\end{center}
+
+% I can't find a reference to why the following block is needed in the abstract, but most dissertations have it.
+
+\singlespacing
+\normalsize
+Last name, First name Middle initial. Ph.D. Dissertation title. Major Professor: Dr. Advisors name.\\
+\doublespacing
+\normalsize
+
+Abstract goes here. 350 words.
+
+\clearpage
+
+\singlespacing
+
+% Moved the following TOC settings out of the preamble since they were not working there.
+
+\renewcommand{\cftdotsep}{1.5}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\renewcommand\contentsname{TABLE OF CONTENTS}
+\setlength{\cftbeforetoctitleskip}{-12pt}
+\setlength{\cftaftertoctitleskip}{24pt}
+\renewcommand{\cfttoctitlefont}{\hfill\textbf}
+\renewcommand{\cftaftertoctitle}{\hfill\hfill}
+\setlength{\cftbeforechapskip}{12pt}
+\setlength{\cftbeforesecskip}{0pt}
+\renewcommand{\cftchapfont}{}
+\renewcommand{\cftchappagefont}{}
+\renewcommand*\cftchapdotsep{\cftnodots}
+\renewcommand*\cftsecdotsep{\cftnodots}
+\renewcommand*\cftsubsecdotsep{\cftnodots}
+\renewcommand*\cftsubsubsecdotsep{\cftnodots}
+
+\renewcommand\listtablename{LIST OF TABLES}
+\setlength{\cftbeforelottitleskip}{-12pt}
+\setlength{\cftafterlottitleskip}{24pt}
+\renewcommand{\cftlottitlefont}{\hfill\textbf}
+\renewcommand{\cftafterlottitle}{\hfill}
+\setlength{\cftbeforetabskip}{12pt}
+\renewcommand*\cfttabdotsep{\cftnodots}
+
+\renewcommand\listfigurename{LIST OF FIGURES}
+\setlength{\cftbeforeloftitleskip}{-12pt}
+\setlength{\cftafterloftitleskip}{24pt}
+\renewcommand{\cftloftitlefont}{\hfill\textbf}
+\renewcommand{\cftafterloftitle}{\hfill}
+\setlength{\cftbeforefigskip}{12pt}
+\renewcommand*\cftfigdotsep{\cftnodots}
+
+\tableofcontents
+
+\clearpage
+
+% Only include List of Tables if you have 5 or more
+
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+
+\clearpage
+
+% Only include List of Figures if you have 5 or more
+
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
+\clearpage
+
+\doublespacing
+
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\chapter{Introduction}
+
+Content of the dissertation goes here.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Use whatever bib style you want (e.g., IEEEtran).
+
+\bibliographystyle{SIGCHI-Reference-Format}
+
+\addcontentsline{toc}{chapter}{References}
+
+\renewcommand\bibname{References\vspace{12pt}}
+
+\singlespacing
+
+\bibliography{ref}
+
+\doublespacing
+
+%\appendix
+
+
+\end{document}
